@@ -1,12 +1,16 @@
 meta:
   environment: node
   toolchain:
-    name: browser
+    name: npm
     version: 20
 
 build:
   skip: false
+  additionalCommands: npm run build
   artifacts:
     "dist/*": /
 
-run: {}
+run:
+  command: npx vite preview --host 0.0.0.0 --port 80
+  persistenceMount: /data
+  containerPort: 80
