@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
       host: '0.0.0.0',
       port: 80,
       allowedHosts: [
-        'pp-alabuga2-julia2806.amvera.io',
+        'pp-alabuga-sayt-julia2806.amvera.io',
         'printpoject.ru',
         'www.printpoject.ru',
       ],
