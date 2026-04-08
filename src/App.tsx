@@ -14,7 +14,7 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ContactForm from './components/ContactForm';
 import Modal from './components/Modal';
-import FloatingContact from './components/FloatingContact';
+import StickyMobileMenu from './components/StickyMobileMenu';
 import Portfolio from './components/Portfolio';
 import TrustSection from './components/TrustSection';
 
@@ -28,12 +28,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
-      <Header />
+      <Header onOpenModal={() => setIsModalOpen(true)} />
       <main>
-        <Hero />
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><Services /></motion.div>
+        <Hero onOpenModal={() => setIsModalOpen(true)} />
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><Services onOpenModal={() => setIsModalOpen(true)} /></motion.div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><Portfolio /></motion.div>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><B2BSection /></motion.div>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><B2BSection onOpenModal={() => setIsModalOpen(true)} /></motion.div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><TrustSection /></motion.div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><HowItWorks /></motion.div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><FAQ /></motion.div>
@@ -42,7 +42,7 @@ export default function App() {
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <ContactForm onClose={() => setIsModalOpen(false)} />
       </Modal>
-      <FloatingContact />
+      <StickyMobileMenu onOpenModal={() => setIsModalOpen(true)} />
     </div>
   );
 }

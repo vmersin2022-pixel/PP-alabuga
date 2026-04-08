@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Hero() {
+export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
   return (
     <section className="py-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -12,11 +12,11 @@ export default function Hero() {
           Рассчитаем стоимость по фото, макету или описанию задачи, поможем с подготовкой и согласуем срок до запуска.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="https://t.me/printproject_elabuga_bot?start=raschet" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-10 py-5 rounded-3xl font-bold text-lg hover:bg-blue-700 transition shadow-lg shadow-blue-500/20 text-center">
-            Рассчитать стоимость
-          </a>
+          <button onClick={onOpenModal} className="bg-blue-600 text-white px-10 py-5 rounded-3xl font-bold text-lg hover:bg-blue-700 transition shadow-lg shadow-blue-500/20 text-center">
+            Получить расчет за 15 минут
+          </button>
           <a href="#b2b" className="bg-white text-slate-900 px-10 py-5 rounded-3xl font-bold text-lg hover:bg-slate-100 transition shadow-sm border border-slate-200">
-            Запросить расчёт для компании
+            Запросить КП
           </a>
         </div>
         <div className="mt-16 flex flex-wrap justify-center gap-4 text-sm text-slate-500">

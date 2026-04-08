@@ -1,4 +1,5 @@
 import React from 'react';
+import { MessageCircle, Globe } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -6,6 +7,17 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto px-6 text-center">
         <p className="mb-4 font-extrabold text-white text-2xl tracking-tight">Print Project</p>
         <p className="mb-8 text-slate-300">Печать и брендирование одежды в Елабуге</p>
+        
+        <div className="flex justify-center space-x-6 mb-12">
+          <a href="https://t.me/printproject_elabuga_bot?start=raschet" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-white hover:text-blue-400 transition">
+            <MessageCircle className="w-6 h-6" />
+            <span>Telegram</span>
+          </a>
+          <a href="https://vk.com/print.project" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-white hover:text-blue-400 transition">
+            <Globe className="w-6 h-6" />
+            <span>VK</span>
+          </a>
+        </div>
         
         <div className="grid md:grid-cols-2 gap-8 mb-12 text-sm text-slate-300">
           <div className="space-y-2">
