@@ -78,14 +78,33 @@ export default function ContactForm({ onClose }: { onClose?: () => void }) {
         <h2 className="text-2xl font-extrabold text-slate-900">Спасибо! Заявка принята.</h2>
         <p className="text-slate-600 leading-relaxed">
           Обычно отвечаем в течение 10–15 минут.<br />
-          Если хотите ускорить расчет — перейдите в Telegram и отправьте макет или пример.
+          Если хотите ускорить расчет — можете пройти в бот или сразу написать менеджеру в Telegram.
         </p>
         <div className="flex flex-col space-y-3 pt-4">
-          <a href="https://t.me/printproject_elabuga_bot?start=success" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-[#2AABEE] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#229ED9] transition shadow-lg shadow-[#2AABEE]/30">
+          <a
+            href="https://t.me/printproject_elabuga_bot?start=success"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-full bg-[#2AABEE] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#229ED9] transition shadow-lg shadow-[#2AABEE]/30"
+          >
             <MessageCircle className="w-5 h-5 mr-2" />
-            Написать в Telegram
+            Пройти в Telegram-бот
           </a>
-          <a href="tel:+79656212493" className="flex items-center justify-center w-full bg-slate-100 text-slate-900 py-4 rounded-xl font-bold text-lg hover:bg-slate-200 transition">
+
+          <a
+            href="https://t.me/printProject716"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-full bg-slate-900 text-white py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition"
+          >
+            <MessageCircle className="w-5 h-5 mr-2" />
+            Написать менеджеру
+          </a>
+
+          <a
+            href="tel:+79656212493"
+            className="flex items-center justify-center w-full bg-slate-100 text-slate-900 py-4 rounded-xl font-bold text-lg hover:bg-slate-200 transition"
+          >
             <Phone className="w-5 h-5 mr-2" />
             Позвонить
           </a>
@@ -189,11 +208,30 @@ export default function ContactForm({ onClose }: { onClose?: () => void }) {
 
       <div className="mt-8 pt-6 border-t border-slate-100 text-center">
         <p className="text-sm text-slate-500 mb-4">Или пройдите опрос в Telegram</p>
-        <a href="https://t.me/printproject_elabuga_bot?start=quiz" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-[#2AABEE] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#229ED9] transition shadow-lg shadow-[#2AABEE]/30">
+
+        <a
+          href="https://t.me/printproject_elabuga_bot?start=quiz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-full bg-[#2AABEE] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#229ED9] transition shadow-lg shadow-[#2AABEE]/30"
+        >
           <MessageCircle className="w-5 h-5 mr-2" />
           Ответить в Telegram
         </a>
-        <p className="text-xs text-slate-400 mt-3">Бот задаст несколько быстрых вопросов и поможет собрать детали заказа</p>
+
+        <p className="text-xs text-slate-400 mt-3">
+          Бот задаст несколько быстрых вопросов и поможет собрать детали заказа
+        </p>
+
+        <a
+          href="https://t.me/printProject716"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center mt-4 text-sm font-semibold text-slate-700 hover:text-blue-600 transition"
+        >
+          <MessageCircle className="w-4 h-4 mr-2" />
+          Или написать менеджеру напрямую
+        </a>
       </div>
     </div>
   );
