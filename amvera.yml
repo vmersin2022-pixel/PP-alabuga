@@ -1,11 +1,14 @@
 meta:
   environment: node
   toolchain:
-    name: browser
-    version: 20
+    name: npm
+    version: "20"
 
 build:
-  # Amvera сама сделает npm install && npm run build
-  # Vite собирает проект в папку dist
+  additionalCommands: npm run build
   artifacts:
     "dist/*": /
+
+run:
+  command: "echo 'Static site ready'"
+  containerPort: 80
