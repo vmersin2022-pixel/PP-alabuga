@@ -6,12 +6,16 @@ export default function Footer() {
     <footer className="py-20 bg-slate-900/80 backdrop-blur-sm text-slate-400">
       <div className="max-w-5xl mx-auto px-6 text-center">
         <p className="mb-4 font-extrabold text-white text-2xl tracking-tight">Print Project</p>
-        <p className="mb-8 text-slate-300">Печать и брендирование одежды в Елабуге</p>
+        <p className="mb-8 text-slate-300 max-w-lg mx-auto leading-relaxed">
+          Печать логотипов и принтов на текстиле в Елабуге.<br />
+          Футболки, худи, спецодежда, шоперы, корпоративный мерч.<br />
+          От 1 штуки и оптом. Расчет по фото, помощь с макетом, быстрый прием заявок.
+        </p>
         
         <div className="flex justify-center space-x-6 mb-12">
-          <a href="https://t.me/printproject_elabuga_bot?start=raschet" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-white hover:text-blue-400 transition">
+          <a href="https://t.me/printproject_elabuga_bot?start=footer" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-white hover:text-blue-400 transition">
             <MessageCircle className="w-6 h-6" />
-            <span>Telegram</span>
+            <span>Telegram-бот</span>
           </a>
           <a href="https://vk.com/print.project" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-white hover:text-blue-400 transition">
             <Globe className="w-6 h-6" />

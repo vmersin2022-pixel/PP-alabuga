@@ -20,7 +20,7 @@ export default function Modal({ isOpen, onClose, children }: { isOpen: boolean; 
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
           >
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg pointer-events-auto overflow-hidden relative">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg pointer-events-auto overflow-y-auto max-h-[90vh] relative">
               <button onClick={onClose} className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full">
                 <X className="w-6 h-6 text-gray-500" />
               </button>

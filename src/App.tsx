@@ -4,6 +4,7 @@
  */
 
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'motion/react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -17,10 +18,12 @@ import Modal from './components/Modal';
 import StickyMobileMenu from './components/StickyMobileMenu';
 import Portfolio from './components/Portfolio';
 import TrustSection from './components/TrustSection';
+import SolutionsHub from './components/SolutionsHub';
+import SegmentPage from './components/SegmentPage';
+import CookieConsent from './components/CookieConsent';
+import FinalCTA from './components/FinalCTA';
 
-export default function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+function HomePage({ onOpenModal }: { onOpenModal: () => void }) {
   const sectionVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -28,21 +31,37 @@ export default function App() {
 
   return (
     <div className="min-h-screen text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
-      <Header onOpenModal={() => setIsModalOpen(true)} />
+      <Header onOpenModal={onOpenModal} />
       <main>
-        <Hero onOpenModal={() => setIsModalOpen(true)} />
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><Services onOpenModal={() => setIsModalOpen(true)} /></motion.div>
+        <Hero onOpenModal={onOpenModal} />
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><SolutionsHub /></motion.div>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><Services onOpenModal={onOpenModal} /></motion.div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><Portfolio /></motion.div>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><B2BSection onOpenModal={() => setIsModalOpen(true)} /></motion.div>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><B2BSection onOpenModal={onOpenModal} /></motion.div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><TrustSection /></motion.div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><HowItWorks /></motion.div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><FAQ /></motion.div>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><FinalCTA onOpenModal={onOpenModal} /></motion.div>
       </main>
       <Footer />
+      <StickyMobileMenu onOpenModal={onOpenModal} />
+    </div>
+  );
+}
+
+export default function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage onOpenModal={() => setIsModalOpen(true)} />} />
+        <Route path="/:segment" element={<SegmentPage />} />
+      </Routes>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <ContactForm onClose={() => setIsModalOpen(false)} />
       </Modal>
-      <StickyMobileMenu onOpenModal={() => setIsModalOpen(true)} />
-    </div>
+      <CookieConsent />
+    </Router>
   );
 }
