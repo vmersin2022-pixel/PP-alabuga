@@ -32,5 +32,6 @@
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
+    "build": "vite build && echo '/* /index.html 200' > dist/_redirects"
   }
 }
