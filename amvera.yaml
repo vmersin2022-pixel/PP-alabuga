@@ -7,4 +7,4 @@ meta:
 build:
   additionalCommands: npm run build
   artifacts:
-    "dist/*": /
+    dist/*: /
