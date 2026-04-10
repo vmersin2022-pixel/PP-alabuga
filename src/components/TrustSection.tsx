@@ -1,30 +1,68 @@
 import React from 'react';
-import { ShieldCheck, Clock, Users } from 'lucide-react';
+import { ShieldCheck, Clock, Users, Building2 } from 'lucide-react';
 
 export default function TrustSection() {
+  const cards = [
+    {
+      icon: <Building2 className="w-12 h-12" strokeWidth={1.5} />,
+      title: '100+',
+      subtitle: 'компаний уже заказали у нас форму с логотипом',
+      desc: 'Работаем с бизнесом, командами и производствами'
+    },
+    {
+      icon: <Clock className="w-12 h-12" strokeWidth={1.5} />,
+      title: '3–5 дней',
+      subtitle: 'средний срок выполнения',
+      desc: 'Согласовываем сроки заранее и соблюдаем их'
+    },
+    {
+      icon: <Users className="w-12 h-12" strokeWidth={1.5} />,
+      title: '90%',
+      subtitle: 'клиентов возвращаются',
+      desc: 'Потому что логотип не стирается даже после 30+ стирок. И мы бесплатно переделаем, если есть брак'
+    },
+    {
+      icon: <ShieldCheck className="w-12 h-12" strokeWidth={1.5} />,
+      title: 'Гарантия',
+      subtitle: 'Гарантия на печать',
+      desc: 'Если логотип треснет или сотрется — переделаем бесплатно'
+    }
+  ];
+
   return (
-    <section className="py-24">
+    <section className="py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-extrabold text-slate-900 text-center mb-16 tracking-tight">Почему нам доверяют</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white p-10 rounded-3xl border border-slate-100 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300">
-            <Users className="w-16 h-16 text-blue-600 mb-8" />
-            <h3 className="font-extrabold text-5xl text-slate-900 mb-4">100+</h3>
-            <p className="text-xl font-bold text-slate-900 mb-3">довольных клиентов</p>
-            <p className="text-slate-600 leading-relaxed text-lg">Работаем с компаниями, мероприятиями и частными заказами.</p>
-          </div>
-          <div className="bg-white p-10 rounded-3xl border border-slate-100 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300">
-            <Clock className="w-16 h-16 text-blue-600 mb-8" />
-            <h3 className="font-extrabold text-5xl text-slate-900 mb-4">3–5 дней</h3>
-            <p className="text-xl font-bold text-slate-900 mb-3">средний срок выполнения</p>
-            <p className="text-slate-600 leading-relaxed text-lg">Предварительно согласуем срок после расчёта. Срочные заказы — по загрузке.</p>
-          </div>
-          <div className="bg-white p-10 rounded-3xl border border-slate-100 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300">
-            <ShieldCheck className="w-16 h-16 text-blue-600 mb-8" />
-            <h3 className="font-extrabold text-5xl text-slate-900 mb-4">90%</h3>
-            <p className="text-xl font-bold text-slate-900 mb-3">клиентов возвращаются</p>
-            <p className="text-slate-600 leading-relaxed text-lg">Гарантия на принт — 30+ стирок. Бесплатная замена при браке печати.</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {cards.map((card, index) => (
+            <div 
+              key={index} 
+              className="group bg-white p-8 rounded-[24px] shadow-sm shadow-slate-200/50 border border-slate-100 flex flex-col relative overflow-hidden transition-all duration-500 cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20"
+            >
+              {/* Base Content */}
+              <div className="relative z-10 flex flex-col h-full transition-opacity duration-500 group-hover:opacity-0">
+                <div className="mb-6 text-blue-600 transition-transform duration-700 group-hover:scale-110 origin-left">
+                  {card.icon}
+                </div>
+                <h3 className="font-extrabold text-4xl text-slate-900 mb-3">{card.title}</h3>
+                <p className="text-lg font-bold text-slate-800 mb-4">{card.subtitle}</p>
+                <p className="text-slate-600 leading-relaxed flex-grow">{card.desc}</p>
+              </div>
+
+              {/* Cinematic Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center p-8 z-20">
+                <h3 className="text-3xl font-extrabold text-white mb-3 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-75">
+                  {card.title}
+                </h3>
+                <p className="text-lg font-bold text-blue-400 mb-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-150">
+                  {card.subtitle}
+                </p>
+                <p className="text-slate-300 leading-relaxed transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-200">
+                  {card.desc}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

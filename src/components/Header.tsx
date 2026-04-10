@@ -5,7 +5,12 @@ export default function Header({ onOpenModal }: { onOpenModal: () => void }) {
   return (
     <header className="sticky top-4 z-50 px-4">
       <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-xl border border-slate-100 rounded-3xl h-20 flex items-center justify-between px-4 sm:px-6 shadow-lg shadow-slate-200/50">
-        <div className="text-xl sm:text-2xl font-extrabold text-primary">Print Project</div>
+        <button 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="text-xl sm:text-2xl font-extrabold text-primary cursor-pointer hover:opacity-80 transition-opacity"
+        >
+          Print Project
+        </button>
         
         {/* Mobile Telegram Button */}
         <div className="md:hidden flex items-center">

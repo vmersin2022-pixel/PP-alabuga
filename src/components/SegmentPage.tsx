@@ -4,6 +4,7 @@ import { segments } from '../segments';
 import Header from './Header';
 import Footer from './Footer';
 import ContactForm from './ContactForm';
+import BackgroundLayer from './BackgroundLayer';
 
 export default function SegmentPage() {
   const { segment } = useParams<{ segment: string }>();
@@ -15,6 +16,7 @@ export default function SegmentPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <BackgroundLayer />
       <Header onOpenModal={() => {}} />
       <main className="flex-grow py-20">
         <div className="max-w-5xl mx-auto px-4">
@@ -23,7 +25,7 @@ export default function SegmentPage() {
           </Link>
           
           {/* Hero */}
-          <section className="mb-20">
+          <section className="mb-8">
             <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6">{config.hero.title}</h1>
             <p className="text-xl text-slate-600 mb-8">{config.hero.subtitle}</p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -35,7 +37,7 @@ export default function SegmentPage() {
 
           {/* For Whom */}
           {config.forWhom.length > 0 && (
-            <section className="mb-20">
+            <section className="mb-8">
               <h2 className="text-3xl font-bold text-slate-900 mb-8">Для кого это решение</h2>
               <div className="flex flex-wrap gap-4">
                 {config.forWhom.map((item) => (
@@ -46,7 +48,7 @@ export default function SegmentPage() {
           )}
 
           {/* Pain Points */}
-          <section className="mb-20">
+          <section className="mb-8">
             <h2 className="text-3xl font-bold text-slate-900 mb-8">С какими болями мы работаем</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div>
@@ -71,7 +73,7 @@ export default function SegmentPage() {
           </section>
 
           {/* Solutions */}
-          <section className="mb-20">
+          <section className="mb-8">
             <h2 className="text-3xl font-bold text-slate-900 mb-8">Наши решения</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {config.solutions.map((s) => (
@@ -85,7 +87,7 @@ export default function SegmentPage() {
 
           {/* Evidence */}
           {config.evidence.cases.length > 0 && (
-            <section className="mb-20">
+            <section className="mb-8">
               <h2 className="text-3xl font-bold text-slate-900 mb-8">Примеры работы</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {config.evidence.cases.map((c) => (
@@ -101,7 +103,7 @@ export default function SegmentPage() {
 
           {/* How It Works */}
           {config.howItWorks && config.howItWorks.length > 0 && (
-            <section className="mb-20">
+            <section className="mb-8">
               <h2 className="text-3xl font-bold text-slate-900 mb-8">Как мы работаем</h2>
               <div className="grid md:grid-cols-5 gap-4">
                 {config.howItWorks.map((step, index) => (
@@ -116,14 +118,14 @@ export default function SegmentPage() {
           )}
 
           {/* Form */}
-          <section className="mb-20">
+          <section className="mb-8">
             <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 max-w-2xl mx-auto">
               <ContactForm onClose={() => {}} />
             </div>
           </section>
 
           {/* Final CTA */}
-          <section className="text-center mb-20 bg-blue-600 p-12 rounded-3xl text-white">
+          <section className="text-center mb-8 bg-blue-600 p-12 rounded-3xl text-white">
             <h2 className="text-3xl font-bold mb-4">{config.finalCta.title}</h2>
             <p className="text-lg mb-8 opacity-90">{config.finalCta.description}</p>
             <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition">{config.finalCta.buttonText}</button>

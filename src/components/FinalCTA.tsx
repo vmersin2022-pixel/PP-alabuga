@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FinalCTA({ onOpenModal }: { onOpenModal: () => void }) {
   return (
-    <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+    <section className="py-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">
           Нанесем логотип на вашу одежду за 1–3 дня

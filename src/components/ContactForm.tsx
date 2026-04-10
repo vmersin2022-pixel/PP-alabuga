@@ -79,7 +79,7 @@ export default function ContactForm({ onClose }: { onClose?: () => void }) {
     'Нет, нужна помощь'
   ];
 
-  const OptionButton = ({ value, selected, onClick, children }: { value: string, selected: boolean, onClick: () => void, children: React.ReactNode }) => (
+  const OptionButton = ({ value, selected, onClick, children }: { value: string, selected: boolean, onClick: () => void, children: React.ReactNode, key?: string | number }) => (
     <button 
       onClick={onClick} 
       className={`p-4 border-2 rounded-2xl text-sm text-left transition-all duration-200 font-medium ${
@@ -98,10 +98,13 @@ export default function ContactForm({ onClose }: { onClose?: () => void }) {
         <div className="flex justify-center">
           <CheckCircle className="w-16 h-16 text-green-500" />
         </div>
-        <h2 className="text-2xl font-extrabold text-slate-900">Спасибо, заявка отправлена!</h2>
+        <div>
+          <p className="text-blue-600 font-bold mb-2">Уже считаем ваш заказ...</p>
+          <h2 className="text-2xl font-extrabold text-slate-900">Спасибо, заявка отправлена!</h2>
+        </div>
         <p className="text-slate-600 leading-relaxed">Мы свяжемся с вами в ближайшее время.</p>
         <div className="space-y-3">
-          <a href="https://t.me/printproject_elabuga_bot?start=lead" target="_blank" rel="noopener noreferrer" className="block w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition">
+          <a href="https://t.me/printproject_elabuga_bot?start=lead" target="_blank" rel="noopener noreferrer" className="block w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.7)] hover:-translate-y-1">
             Связаться с менеджером лично
           </a>
           <button onClick={onClose} className="text-slate-500 hover:text-slate-800 text-sm font-medium">Закрыть</button>
@@ -171,7 +174,7 @@ export default function ContactForm({ onClose }: { onClose?: () => void }) {
             {error && <p className="text-red-700 font-medium bg-red-50 p-3 rounded-lg border border-red-100">{error}</p>}
             
             <div className="space-y-3 mt-4">
-              <button onClick={handleSubmit} disabled={loading} className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition disabled:opacity-60 shadow-lg shadow-blue-500/30">
+              <button onClick={handleSubmit} disabled={loading} className="w-full bg-blue-600 text-white py-5 rounded-xl font-bold text-lg hover:bg-blue-700 transition disabled:opacity-60 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.7)] hover:-translate-y-1 disabled:hover:translate-y-0 disabled:hover:shadow-none">
                 {loading ? 'Отправка...' : 'Получить расчет'}
               </button>
               <a href="https://t.me/printproject_elabuga_bot?start=lead" target="_blank" rel="noopener noreferrer" className="block w-full text-center text-slate-600 py-3 rounded-xl font-semibold hover:bg-slate-50 transition border border-slate-200">
@@ -186,7 +189,10 @@ export default function ContactForm({ onClose }: { onClose?: () => void }) {
   return (
     <div className="p-6 sm:p-8">
       <div className="flex justify-between items-start mb-6">
-        <h2 className="text-2xl font-extrabold text-slate-900">Расчет стоимости</h2>
+        <div>
+          <p className="text-sm text-blue-600 font-bold mb-2">⏱ Расчет займет 30 секунд</p>
+          <h2 className="text-2xl font-extrabold text-slate-900">Расчет стоимости</h2>
+        </div>
         <div className="text-sm font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
           Шаг {step} из 4
         </div>
