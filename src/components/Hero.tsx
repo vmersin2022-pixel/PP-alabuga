@@ -6,7 +6,7 @@ export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
     <section className="relative py-8 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
         <div className="text-left">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-[#111827] tracking-[-0.5px] leading-[1.1] mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#111827] tracking-[-0.5px] leading-[1.1] mb-8">
             <span className="block font-extrabold">Наносим логотипы</span>
             <span className="block font-extrabold">на одежду, которые</span>
             <span className="block font-semibold text-[#111827]">не стираются</span>
@@ -27,7 +27,7 @@ export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
             </div>
             <div className="flex flex-col gap-1">
               <a 
-                href="https://t.me/printproject_elabuga_bot?start=hero" 
+                href="https://t.me/PrintProject16" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-white text-slate-900 border-2 border-slate-200 px-10 py-5 rounded-2xl font-semibold text-lg hover:-translate-y-1 transition-all duration-300 hover:border-blue-500 hover:bg-slate-50 shadow-sm hover:shadow-[0_0_20px_rgba(37,99,235,0.2)]"

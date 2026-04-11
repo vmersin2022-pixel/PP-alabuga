@@ -115,7 +115,7 @@ export default function Services({ onOpenModal }: { onOpenModal: () => void }) {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`relative px-6 py-2.5 rounded-full text-sm transition-all duration-300 ${
+                className={`relative px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm transition-all duration-300 ${
                   activeFilter === filter.id
                     ? 'text-white font-bold shadow-sm'
                     : 'text-slate-500 font-medium hover:text-slate-800'

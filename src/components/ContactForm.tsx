@@ -104,7 +104,7 @@ export default function ContactForm({ onClose }: { onClose?: () => void }) {
         </div>
         <p className="text-slate-600 leading-relaxed">Мы свяжемся с вами в ближайшее время.</p>
         <div className="space-y-3">
-          <a href="https://t.me/printproject_elabuga_bot?start=lead" target="_blank" rel="noopener noreferrer" className="block w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.7)] hover:-translate-y-1">
+          <a href="https://t.me/PrintProject16" target="_blank" rel="noopener noreferrer" className="block w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.7)] hover:-translate-y-1">
             Связаться с менеджером лично
           </a>
           <button onClick={onClose} className="text-slate-500 hover:text-slate-800 text-sm font-medium">Закрыть</button>
@@ -177,7 +177,7 @@ export default function ContactForm({ onClose }: { onClose?: () => void }) {
               <button onClick={handleSubmit} disabled={loading} className="w-full bg-blue-600 text-white py-5 rounded-xl font-bold text-lg hover:bg-blue-700 transition disabled:opacity-60 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.7)] hover:-translate-y-1 disabled:hover:translate-y-0 disabled:hover:shadow-none">
                 {loading ? 'Отправка...' : 'Получить расчет'}
               </button>
-              <a href="https://t.me/printproject_elabuga_bot?start=lead" target="_blank" rel="noopener noreferrer" className="block w-full text-center text-slate-600 py-3 rounded-xl font-semibold hover:bg-slate-50 transition border border-slate-200">
+              <a href="https://t.me/PrintProject16" target="_blank" rel="noopener noreferrer" className="block w-full text-center text-slate-600 py-3 rounded-xl font-semibold hover:bg-slate-50 transition border border-slate-200">
                 Связаться с менеджером лично
               </a>
             </div>

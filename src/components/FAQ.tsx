@@ -115,7 +115,7 @@ export default function FAQ() {
           </div>
           <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
             <a 
-              href="https://t.me/your_telegram" 
+              href="https://t.me/PrintProject16" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-[#229ED9] rounded-full hover:bg-[#1E8CC0] transition-all shadow-[0_0_20px_rgba(34,158,217,0.4)] hover:shadow-[0_0_40px_rgba(34,158,217,0.7)] hover:-translate-y-1 whitespace-nowrap"
@@ -123,7 +123,7 @@ export default function FAQ() {
               <MessageCircle className="w-5 h-5 mr-2" /> В Telegram
             </a>
             <a 
-              href="tel:+79990000000" 
+              href="tel:+79656212493" 
               className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-slate-900 bg-white border-2 border-slate-200 rounded-full hover:border-blue-500 hover:bg-slate-50 transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.2)] hover:-translate-y-1 whitespace-nowrap"
             >
               <Phone className="w-5 h-5 mr-2" /> Позвонить

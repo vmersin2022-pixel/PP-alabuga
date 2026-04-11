@@ -8,7 +8,7 @@ export default function StickyMobileMenu({ onOpenModal }: { onOpenModal: () => v
         <Phone className="w-6 h-6 mb-1" />
         Позвонить
       </a>
-      <a href="https://t.me/printproject_elabuga_bot?start=header" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-[#2AABEE] text-xs font-bold">
+      <a href="https://t.me/PrintProject16" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-[#2AABEE] text-xs font-bold">
         <MessageCircle className="w-6 h-6 mb-1" />
         Telegram
       </a>

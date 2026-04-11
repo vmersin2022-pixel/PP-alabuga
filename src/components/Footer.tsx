@@ -30,7 +30,7 @@ export default function Footer() {
             <p>ИП Давлетшина Юлия Вадимовна</p>
             <p>ИНН 165058069923</p>
             <div className="flex space-x-4 mt-4">
-              <a href="https://t.me/printproject_elabuga_bot?start=footer" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-slate-300 hover:text-blue-400 transition">
+              <a href="https://t.me/PrintProject16" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-slate-300 hover:text-blue-400 transition">
                 <MessageCircle className="w-5 h-5" />
                 <span>Telegram</span>
               </a>
