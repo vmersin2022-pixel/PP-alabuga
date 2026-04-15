@@ -126,6 +126,9 @@ export default function ContactForm({ onClose }: { onClose?: () => void }) {
                 </OptionButton>
               ))}
             </div>
+            <a href="https://t.me/PrintProject16" target="_blank" rel="noopener noreferrer" className="block w-full text-center text-slate-500 py-3 rounded-xl font-semibold hover:bg-slate-50 transition border border-slate-100 text-xs mt-4">
+              Связаться с менеджером лично
+            </a>
           </div>
         );
       case 2:
@@ -140,6 +143,9 @@ export default function ContactForm({ onClose }: { onClose?: () => void }) {
                 </OptionButton>
               ))}
             </div>
+            <a href="https://t.me/PrintProject16" target="_blank" rel="noopener noreferrer" className="block w-full text-center text-slate-500 py-3 rounded-xl font-semibold hover:bg-slate-50 transition border border-slate-100 text-xs mt-4">
+              Связаться с менеджером лично
+            </a>
           </div>
         );
       case 3:
@@ -154,6 +160,9 @@ export default function ContactForm({ onClose }: { onClose?: () => void }) {
                 </OptionButton>
               ))}
             </div>
+            <a href="https://t.me/PrintProject16" target="_blank" rel="noopener noreferrer" className="block w-full text-center text-slate-500 py-3 rounded-xl font-semibold hover:bg-slate-50 transition border border-slate-100 text-xs mt-4">
+              Связаться с менеджером лично
+            </a>
           </div>
         );
       case 4:

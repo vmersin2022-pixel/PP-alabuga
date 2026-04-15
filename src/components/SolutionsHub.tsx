@@ -23,7 +23,7 @@ export default function SolutionsHub() {
     .sort((a, b) => a.order - b.order);
 
   return (
-    <section className="py-12 md:py-20 overflow-hidden">
+    <section id="b2b" className="py-8 md:py-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 relative">
         <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-[40px] p-6 md:p-12 lg:p-16 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.5)] relative overflow-hidden border border-white/5">
           <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-pulse"></div>
@@ -60,12 +60,15 @@ export default function SolutionsHub() {
                         }
                         navigate(`/${s.slug}`);
                       }}
-                      className={`group/card bg-white p-6 lg:p-8 rounded-[32px] shadow-xl border border-slate-100 flex flex-col h-full relative overflow-hidden transition-all duration-500 cursor-pointer md:group-hover/list:opacity-75 md:hover:!opacity-100 md:hover:-translate-y-2 md:hover:shadow-[0_20px_40px_rgba(37,99,235,0.15)] md:hover:border-blue-500/20 ${activeMobileCard === s.id ? 'is-active ring-4 ring-blue-500/20 -translate-y-2 shadow-2xl' : ''}`}
+                      className={`group/card bg-white dark:bg-slate-800 rounded-[48px] shadow-2xl shadow-blue-500/10 border-8 border-white dark:border-slate-800 flex flex-col h-full relative overflow-hidden transition-all duration-500 cursor-pointer md:group-hover/list:opacity-75 md:hover:!opacity-100 md:hover:-translate-y-3 md:hover:shadow-blue-500/20 ${activeMobileCard === s.id ? 'is-active ring-4 ring-blue-500/20 -translate-y-3 shadow-2xl' : ''}`}
                     >
+                      {/* Background Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-600/5 to-transparent pointer-events-none" />
+
                       {/* Base Content */}
-                      <div className="relative z-10 flex flex-col h-full transition-opacity duration-500 md:group-hover/card:opacity-0 group-[.is-active]:opacity-0">
-                        <div className="mb-6 transition-transform duration-700 origin-left md:group-hover/card:scale-110 group-[.is-active]:scale-110">
-                          <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl bg-slate-50 flex items-center justify-center p-4">
+                      <div className="relative z-10 p-8 flex flex-col h-full transition-opacity duration-500 md:group-hover/card:opacity-0 group-[.is-active]:opacity-0">
+                        <div className="mb-8 transition-transform duration-700 origin-left md:group-hover/card:scale-110 group-[.is-active]:scale-110">
+                          <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-[24px] bg-slate-50 dark:bg-slate-900/50 flex items-center justify-center p-4">
                             {s.assets.hubCard.icon.startsWith('http') ? (
                               <img 
                                 src={getProxyImageUrl(s.assets.hubCard.icon)} 
@@ -78,12 +81,12 @@ export default function SolutionsHub() {
                             )}
                           </div>
                         </div>
-                        <h3 className="text-xl lg:text-2xl font-bold mb-3 text-slate-900 leading-tight">{s.assets.hubCard.title}</h3>
-                        <p className="text-sm lg:text-base text-slate-500 leading-relaxed mb-8 flex-grow">
+                        <h3 className="text-2xl lg:text-3xl font-black mb-4 text-slate-900 dark:text-white tracking-tight leading-tight">{s.assets.hubCard.title}</h3>
+                        <p className="text-base lg:text-lg text-slate-500 dark:text-slate-400 leading-relaxed mb-10 flex-grow font-medium">
                           {s.assets.hubCard.description}
                         </p>
-                        <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-50">
-                          <span className="text-blue-600 font-bold flex items-center gap-2 text-sm">
+                        <div className="flex items-center justify-between mt-auto pt-8 border-t border-slate-50 dark:border-white/5">
+                          <span className="text-blue-600 dark:text-blue-400 font-black flex items-center gap-2 text-sm">
                             Подробнее <ArrowRight className="w-4 h-4" />
                           </span>
                           <span className="text-[10px] font-black text-slate-400 uppercase tracking-tighter">

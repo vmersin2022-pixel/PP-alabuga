@@ -82,18 +82,18 @@ export default function Portfolio({ onOpenModal }: { onOpenModal: () => void }) 
   const [activeMobileCard, setActiveMobileCard] = useState<number | null>(null);
 
   return (
-    <section className="py-12 md:py-24">
+    <section className="py-12 md:py-24 bg-white dark:bg-slate-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center mb-16">
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-100 dark:border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-6"
           >
             <Sparkles className="w-3.5 h-3.5" />
             Наше портфолио
           </motion.div>
-          <h2 className="text-3xl md:text-5xl font-black text-slate-900 text-center tracking-tight leading-tight">
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white text-center tracking-tight leading-tight">
             Примеры работ для бизнеса
           </h2>
         </div>
@@ -107,7 +107,7 @@ export default function Portfolio({ onOpenModal }: { onOpenModal: () => void }) 
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileTap={{ scale: 0.98 }}
-              className={`rounded-[32px] overflow-hidden shadow-xl shadow-slate-200/50 transition-all duration-500 bg-white relative group cursor-pointer border border-slate-100 flex flex-col ${activeMobileCard === index ? 'is-active ring-4 ring-blue-500/20 -translate-y-2 shadow-2xl' : ''}`}
+              className={`rounded-[48px] overflow-hidden shadow-2xl shadow-blue-500/10 dark:shadow-none transition-all duration-500 bg-white dark:bg-slate-800 relative group cursor-pointer border-8 border-white dark:border-slate-800 flex flex-col ${activeMobileCard === index ? 'is-active ring-4 ring-blue-500/20 -translate-y-3 shadow-2xl' : ''}`}
               onClick={() => {
                 if (window.matchMedia('(max-width: 768px)').matches) {
                   if (activeMobileCard !== index) {
@@ -125,6 +125,9 @@ export default function Portfolio({ onOpenModal }: { onOpenModal: () => void }) 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110"
                   referrerPolicy="origin-when-cross-origin"
                 />
+                {/* Background Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent pointer-events-none opacity-40" />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                   <ul className="space-y-3 text-white mb-8 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-[.is-active]:translate-y-0 group-[.is-active]:opacity-100 transition-all duration-500 delay-100">
                     {work.hoverFeatures.map((feature, i) => (
@@ -141,9 +144,9 @@ export default function Portfolio({ onOpenModal }: { onOpenModal: () => void }) 
                   </div>
                 </div>
               </div>
-              <div className="p-8 bg-white relative z-10 flex-grow flex flex-col justify-center transition-all duration-500 group-hover:opacity-0 group-[.is-active]:opacity-0">
-                <p className="font-bold text-xl text-slate-900 mb-3 leading-tight">{work.title}</p>
-                <p className="text-sm text-slate-500 leading-relaxed font-medium">{work.stats}</p>
+              <div className="p-8 bg-white dark:bg-slate-800 relative z-10 flex-grow flex flex-col justify-center transition-all duration-500 group-hover:opacity-0 group-[.is-active]:opacity-0">
+                <p className="font-black text-xl text-slate-900 dark:text-white mb-3 leading-tight tracking-tight">{work.title}</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-bold">{work.stats}</p>
               </div>
             </motion.div>
           ))}

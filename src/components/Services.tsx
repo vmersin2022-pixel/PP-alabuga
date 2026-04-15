@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Shirt, Layers, Wrench, Shield, HardHat, ShoppingBag, Scissors, ArrowRight } from 'lucide-react';
+import { Shirt, Layers, Wrench, Shield, HardHat, ShoppingBag, Scissors, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
 
 type FilterType = 'business' | 'events' | 'personnel';
 
@@ -97,7 +97,7 @@ export default function Services({ onOpenModal }: { onOpenModal: () => void }) {
   const filteredProducts = products.filter((p) => p.categories.includes(activeFilter));
 
   return (
-    <section id="services" className="py-8 bg-slate-50/80">
+    <section id="services" className="py-4 md:py-8 bg-slate-50/80 dark:bg-slate-900/50 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#111827] mb-6 tracking-tight">
@@ -135,7 +135,7 @@ export default function Services({ onOpenModal }: { onOpenModal: () => void }) {
         </div>
 
         {/* Cards Grid */}
-        <motion.div layout className="flex flex-wrap justify-center gap-6 mb-16">
+        <motion.div layout className="flex flex-wrap justify-center gap-10 mb-16">
           <AnimatePresence mode="popLayout">
             {filteredProducts.map((product) => (
               <motion.div
@@ -146,43 +146,47 @@ export default function Services({ onOpenModal }: { onOpenModal: () => void }) {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 onClick={onOpenModal}
-                className="group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] bg-white p-6 rounded-[24px] shadow-sm shadow-slate-200/50 border border-slate-100 flex flex-col relative overflow-hidden transition-all duration-500 cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20"
+                className="group w-full sm:w-[calc(50%-20px)] lg:w-[calc(33.333%-27px)] xl:w-[calc(25%-30px)] bg-white dark:bg-slate-800 rounded-[48px] shadow-2xl shadow-blue-500/10 dark:shadow-none border-8 border-white dark:border-slate-800 flex flex-col relative transition-all duration-500 cursor-pointer hover:-translate-y-3 hover:shadow-blue-500/20"
               >
-                {/* Base Content */}
-                <div className="relative z-10 flex flex-col h-full transition-opacity duration-500 group-hover:opacity-0">
-                  <div className="mb-4 text-blue-600 transition-transform duration-700 group-hover:scale-110 origin-left">
-                    <product.icon className="w-10 h-10" strokeWidth={1.5} />
+                {/* Background Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/5 to-transparent pointer-events-none" />
+
+                <div className="relative z-10 p-8 flex flex-col h-full">
+                  {/* Icon Container */}
+                  <div className="w-16 h-16 bg-blue-50 dark:bg-blue-500/10 rounded-[24px] flex items-center justify-center text-blue-600 dark:text-blue-400 mb-8 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3">
+                    <product.icon className="w-8 h-8" strokeWidth={2} />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-slate-900">{product.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-5 flex-grow">
+
+                  <h3 className="text-2xl font-black mb-3 text-slate-900 dark:text-white tracking-tight leading-tight">
+                    {product.title}
+                  </h3>
+                  
+                  <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-8 flex-grow font-medium">
                     {product.defaultDesc}
                   </p>
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
-                    <span className="text-blue-600 font-bold text-sm flex items-center gap-1.5">
+
+                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-100 dark:border-white/5">
+                    <span className="text-blue-600 dark:text-blue-400 font-black text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
                       {product.cta} <ArrowRight className="w-4 h-4" />
                     </span>
-                    {product.badge && (
-                      <span className={`text-[10px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap ${product.badgeColor}`}>
-                        {product.badge}
-                      </span>
-                    )}
                   </div>
                 </div>
 
-                {/* Cinematic Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center p-6 z-20">
-                  <h3 className="text-xl font-bold text-white mb-3 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-75">
-                    {product.title}
-                  </h3>
-                  <p className="text-slate-300 text-sm leading-relaxed mb-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-150">
-                    {product.hoverDesc}
-                  </p>
-                  <div className="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-200">
-                    <span className="inline-flex items-center gap-2 text-white font-bold bg-blue-600 px-6 py-3 rounded-full hover:bg-blue-500 transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.7)] text-sm">
-                      {product.cta} <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </div>
-                </div>
+                {/* Floating Badge (Hero Style) */}
+                {product.badge && (
+                  <motion.div
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -bottom-4 -right-4 bg-white dark:bg-slate-800 px-5 py-3 rounded-[24px] shadow-2xl border border-slate-100 dark:border-white/5 flex items-center gap-3 z-30"
+                  >
+                    <div className="w-8 h-8 bg-orange-100 dark:bg-orange-500/20 rounded-xl flex items-center justify-center text-orange-600 dark:text-orange-400">
+                      <Sparkles className="w-4 h-4" />
+                    </div>
+                    <p className="text-[10px] font-black text-orange-600 dark:text-orange-400 uppercase tracking-widest whitespace-nowrap">
+                      {product.badge}
+                    </p>
+                  </motion.div>
+                )}
               </motion.div>
             ))}
           </AnimatePresence>

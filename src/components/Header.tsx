@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone, MessageCircle, Menu, X, ArrowRight } from 'lucide-react';
+import { Phone, MessageCircle, Menu, X, ArrowRight, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../App';
 
 export default function Header({ onOpenModal }: { onOpenModal: () => void }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
 
   const navLinks = [
     { href: '#services', label: 'Услуги' },
@@ -15,20 +17,27 @@ export default function Header({ onOpenModal }: { onOpenModal: () => void }) {
       <motion.div 
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="max-w-6xl mx-auto bg-white/80 backdrop-blur-xl border border-white/20 rounded-[32px] h-20 flex items-center justify-between px-6 shadow-[0_20px_40px_rgba(0,0,0,0.05)]"
+        className="max-w-6xl mx-auto bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-white/20 dark:border-white/5 rounded-[32px] h-20 flex items-center justify-between px-6 shadow-[0_20px_40px_rgba(0,0,0,0.05)]"
       >
         <button 
           onClick={() => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
             setIsMenuOpen(false);
           }}
-          className="text-xl sm:text-2xl font-black text-slate-900 cursor-pointer hover:opacity-80 transition-opacity tracking-tighter"
+          className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white cursor-pointer hover:opacity-80 transition-opacity tracking-tighter"
         >
           Print<span className="text-blue-600">Project</span>
         </button>
         
         {/* Mobile Actions */}
-        <div className="md:hidden flex items-center gap-3">
+        <div className="md:hidden flex items-center gap-2">
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            onClick={toggleTheme}
+            className="p-2.5 bg-slate-100 dark:bg-slate-800 rounded-2xl text-slate-900 dark:text-white border-none"
+          >
+            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </motion.button>
           <motion.a 
             whileTap={{ scale: 0.9 }}
             href="https://t.me/PrintProject16" 
@@ -41,7 +50,7 @@ export default function Header({ onOpenModal }: { onOpenModal: () => void }) {
           <motion.button 
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2.5 bg-slate-100 rounded-2xl text-slate-900 border-none"
+            className="p-2.5 bg-slate-100 dark:bg-slate-800 rounded-2xl text-slate-900 dark:text-white border-none"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </motion.button>
@@ -51,24 +60,31 @@ export default function Header({ onOpenModal }: { onOpenModal: () => void }) {
         <div className="hidden md:flex items-center space-x-8">
           <nav className="flex items-center space-x-6">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="text-slate-600 hover:text-blue-600 font-bold text-sm transition-colors">
+              <a key={link.href} href={link.href} className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 font-bold text-sm transition-colors">
                 {link.label}
               </a>
             ))}
           </nav>
           
-          <div className="h-8 w-px bg-slate-200" />
+          <div className="h-8 w-px bg-slate-200 dark:bg-white/10" />
 
           <div className="flex flex-col items-end">
-            <a href="tel:+79518906436" className="text-[11px] font-bold text-slate-400 hover:text-blue-600 transition-colors">
+            <a href="tel:+79518906436" className="text-[11px] font-bold text-slate-400 dark:text-slate-500 hover:text-blue-600 transition-colors">
               +7 (951) 890-64-36
             </a>
-            <a href="tel:+79656212493" className="text-sm font-black text-slate-900 hover:text-blue-600 transition-colors">
+            <a href="tel:+79656212493" className="text-sm font-black text-slate-900 dark:text-white hover:text-blue-600 transition-colors">
               +7 (965) 621-24-93
             </a>
           </div>
 
           <div className="flex items-center gap-3">
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleTheme}
+              className="p-3 bg-slate-100 dark:bg-slate-800 rounded-2xl text-slate-900 dark:text-white border-none hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            >
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </motion.button>
             <motion.button 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -88,7 +104,7 @@ export default function Header({ onOpenModal }: { onOpenModal: () => void }) {
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            className="md:hidden absolute top-24 left-4 right-4 bg-white/95 backdrop-blur-2xl border border-white/20 rounded-[32px] p-8 shadow-[0_30px_60px_rgba(0,0,0,0.15)] z-50"
+            className="md:hidden absolute top-24 left-4 right-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-white/20 dark:border-white/5 rounded-[32px] p-8 shadow-[0_30px_60px_rgba(0,0,0,0.15)] z-50"
           >
             <nav className="flex flex-col space-y-3">
               {navLinks.map((link) => (
@@ -97,24 +113,24 @@ export default function Header({ onOpenModal }: { onOpenModal: () => void }) {
                   key={link.href} 
                   href={link.href} 
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-lg font-black text-slate-900 p-5 bg-slate-50 rounded-2xl flex items-center justify-between group active:bg-blue-50 active:text-blue-600 transition-all"
+                  className="text-lg font-black text-slate-900 dark:text-white p-5 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-between group active:bg-blue-50 active:text-blue-600 transition-all"
                 >
                   {link.label}
                   <ArrowRight className="w-5 h-5 text-slate-300 group-active:text-blue-400" />
                 </motion.a>
               ))}
               
-              <div className="pt-6 mt-2 border-t border-slate-100 space-y-6">
+              <div className="pt-6 mt-2 border-t border-slate-100 dark:border-white/5 space-y-6">
                 <div className="space-y-3">
-                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest px-2">Контакты</p>
-                  <a href="tel:+79518906436" className="flex items-center gap-4 text-slate-900 font-bold p-2">
-                    <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+                  <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest px-2">Контакты</p>
+                  <a href="tel:+79518906436" className="flex items-center gap-4 text-slate-900 dark:text-white font-bold p-2">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-blue-400">
                       <Phone className="w-5 h-5" />
                     </div>
                     <span>+7 (951) 890-64-36</span>
                   </a>
-                  <a href="tel:+79656212493" className="flex items-center gap-4 text-slate-900 font-bold p-2">
-                    <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+                  <a href="tel:+79656212493" className="flex items-center gap-4 text-slate-900 dark:text-white font-bold p-2">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-500/10 flex items-center justify-center text-blue-600 dark:text-blue-400">
                       <Phone className="w-5 h-5" />
                     </div>
                     <span>+7 (965) 621-24-93</span>

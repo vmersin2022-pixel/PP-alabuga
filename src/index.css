@@ -8,9 +8,22 @@
   --color-text-main: #111827;
   --color-text-muted: #6B7280;
   --color-bg-light: #F7F8FA;
+
+  --color-dark-bg: #0F172A;
+  --color-dark-card: #1E293B;
+  --color-dark-text: #F8FAFC;
+  --color-dark-muted: #94A3B8;
 }
 
-body {
-  background-color: var(--color-bg-light);
-  color: var(--color-text-main);
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-main);
+  }
+
+  .dark body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
+  }
 }
