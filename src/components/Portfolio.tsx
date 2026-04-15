@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { getProxyImageUrl } from '../lib/imageUtils';
 
 const works = [
@@ -81,14 +82,32 @@ export default function Portfolio({ onOpenModal }: { onOpenModal: () => void }) 
   const [activeMobileCard, setActiveMobileCard] = useState<number | null>(null);
 
   return (
-    <section className="py-8">
+    <section className="py-12 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-extrabold text-slate-900 text-center mb-16 tracking-tight">Примеры работ для бизнеса</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="flex flex-col items-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest mb-6"
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            Наше портфолио
+          </motion.div>
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 text-center tracking-tight leading-tight">
+            Примеры работ для бизнеса
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 mb-20">
           {works.map((work, index) => (
-            <div 
-              key={index} 
-              className={`rounded-3xl overflow-hidden shadow-lg shadow-slate-200/50 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 bg-white relative group cursor-pointer border border-slate-100 flex flex-col ${activeMobileCard === index ? 'is-active shadow-2xl shadow-blue-500/20 -translate-y-1' : ''}`}
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileTap={{ scale: 0.98 }}
+              className={`rounded-[32px] overflow-hidden shadow-xl shadow-slate-200/50 transition-all duration-500 bg-white relative group cursor-pointer border border-slate-100 flex flex-col ${activeMobileCard === index ? 'is-active ring-4 ring-blue-500/20 -translate-y-2 shadow-2xl' : ''}`}
               onClick={() => {
                 if (window.matchMedia('(max-width: 768px)').matches) {
                   if (activeMobileCard !== index) {
@@ -101,55 +120,61 @@ export default function Portfolio({ onOpenModal }: { onOpenModal: () => void }) 
             >
               <div className="relative overflow-hidden aspect-[4/5]">
                 <img 
-                  src={getProxyImageUrl(work.url || `https://picsum.photos/seed/${work.seed}/600/800`)} 
+                  src={getProxyImageUrl(work.url)} 
                   alt={work.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-[.is-active]:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-[.is-active]:scale-110"
                   referrerPolicy="origin-when-cross-origin"
                 />
-                <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-500 flex flex-col justify-center p-8">
-                  <ul className="space-y-3 text-white mb-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-[.is-active]:translate-y-0 group-[.is-active]:opacity-100 transition-all duration-500 delay-100">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                  <ul className="space-y-3 text-white mb-8 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-[.is-active]:translate-y-0 group-[.is-active]:opacity-100 transition-all duration-500 delay-100">
                     {work.hoverFeatures.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-blue-400 mt-1">—</span>
-                        <span className="font-medium leading-snug">{feature}</span>
+                      <li key={i} className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0" />
+                        <span className="font-medium leading-snug text-sm md:text-base">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <div className="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-[.is-active]:translate-y-0 group-[.is-active]:opacity-100 transition-all duration-500 delay-200">
-                    <span className="inline-flex items-center gap-2 text-white font-bold bg-blue-600 px-5 py-2.5 rounded-full hover:bg-blue-500 transition-colors">
+                    <span className="inline-flex items-center gap-2 text-white font-bold bg-blue-600 px-6 py-3 rounded-full hover:bg-blue-500 transition-colors shadow-lg shadow-blue-900/20">
                       {work.cta} <ArrowRight className="w-4 h-4" />
                     </span>
                   </div>
                 </div>
               </div>
-              <div className="p-6 bg-white relative z-10 flex-grow flex flex-col justify-center transition-opacity duration-500 group-hover:opacity-0 group-[.is-active]:opacity-0">
-                <p className="font-bold text-xl text-slate-900 mb-2">{work.title}</p>
-                <p className="text-sm text-slate-600 leading-relaxed">{work.stats}</p>
+              <div className="p-8 bg-white relative z-10 flex-grow flex flex-col justify-center transition-all duration-500 group-hover:opacity-0 group-[.is-active]:opacity-0">
+                <p className="font-bold text-xl text-slate-900 mb-3 leading-tight">{work.title}</p>
+                <p className="text-sm text-slate-500 leading-relaxed font-medium">{work.stats}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Final CTA */}
-        <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl text-center max-w-4xl mx-auto relative overflow-hidden">
-          <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-          <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-[40px] p-8 md:p-16 shadow-2xl text-center max-w-5xl mx-auto relative overflow-hidden border border-white/5"
+        >
+          <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-20"></div>
+          <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-orange-600 rounded-full mix-blend-multiply filter blur-[100px] opacity-20"></div>
           
           <div className="relative z-10">
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
+            <h3 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight leading-tight">
               Сделаем так же для вашего бизнеса
             </h3>
-            <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
               Подберем формат нанесения и сделаем логотип, который не стирается и выглядит аккуратно каждый день
             </p>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={onOpenModal}
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-900 bg-white rounded-full hover:bg-slate-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-slate-900 bg-white rounded-full hover:bg-slate-50 transition-all shadow-[0_20px_40px_rgba(255,255,255,0.1)]"
             >
               Получить расчет <ArrowRight className="w-5 h-5 ml-2" />
-            </button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
