@@ -136,7 +136,7 @@ export const segments: Record<string, SegmentPassport> = {
     ],
     evidence: {
       cases: [
-        { type: 'real', title: 'Комплект для СТО на 12 человек', description: 'Полный комплект формы, сделали за 7 дней', image: 'https://i.postimg.cc/9fZ40pdP/Chat-GPT-Image-14-apr-2026-g-23-57-48.png' },
+        { type: 'real', title: 'Комплект для СТО на 12 человек', description: 'Полный комплект формы, сделали за 7 дней', image: 'https://mtvpselwqpxbptipwjqe.supabase.co/storage/v1/object/public/images/team_mechanics.png' },
         { type: 'real', title: 'Форма для автомойки', description: 'Влагостойкие фартуки, сделали за 5 дней', image: 'https://i.postimg.cc/7YSQ1CgW/Chat-GPT-Image-15-apr-2026-g-00-23-51.png' },
         { type: 'real', title: 'Футболки с логотипом для шиномонтажа', description: 'Износостойкий принт, сделали за 3 дня', image: 'https://i.postimg.cc/VsnFpxdS/Chat-GPT-Image-15-apr-2026-g-00-26-49.png' },
       ],

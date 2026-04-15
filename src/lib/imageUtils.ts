@@ -1,7 +1,14 @@
+import { getSupabaseImageUrl } from './supabase';
+
 export function getProxyImageUrl(url: string) {
-  if (!url || !url.startsWith('http')) return url;
+  if (!url) return url;
   
-  // Ensure we use HTTPS
+  // If it's a relative path or just a filename, assume it's in Supabase 'images' bucket
+  if (!url.startsWith('http')) {
+    return getSupabaseImageUrl(url);
+  }
+  
+  // Ensure we use HTTPS for external links
   const secureUrl = url.replace(/^http:\/\//, 'https://');
   
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -10,6 +17,5 @@ export function getProxyImageUrl(url: string) {
   if (isMobile) return secureUrl;
 
   // On desktop — use proxy for caching and optimization
-  // Using weserv.nl with quality and width parameters
   return `https://images.weserv.nl/?url=${encodeURIComponent(secureUrl)}&default=${encodeURIComponent(secureUrl)}&w=800&q=80&n=-1`;
 }
