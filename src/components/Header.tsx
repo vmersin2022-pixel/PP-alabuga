@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone, MessageCircle, Menu, X, ArrowRight, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../App';
+import { Phone, MessageCircle, Menu, X, ArrowRight } from 'lucide-react';
 
 export default function Header({ onOpenModal }: { onOpenModal: () => void }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { isDark, toggleTheme } = useTheme();
 
   const navLinks = [
     { href: '#services', label: 'Услуги' },
@@ -31,13 +29,6 @@ export default function Header({ onOpenModal }: { onOpenModal: () => void }) {
         
         {/* Mobile Actions */}
         <div className="md:hidden flex items-center gap-2">
-          <motion.button
-            whileTap={{ scale: 0.9 }}
-            onClick={toggleTheme}
-            className="p-2.5 bg-slate-100 dark:bg-slate-800 rounded-2xl text-slate-900 dark:text-white border-none"
-          >
-            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </motion.button>
           <motion.a 
             whileTap={{ scale: 0.9 }}
             href="https://t.me/PrintProject16" 
@@ -50,7 +41,7 @@ export default function Header({ onOpenModal }: { onOpenModal: () => void }) {
           <motion.button 
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2.5 bg-slate-100 dark:bg-slate-800 rounded-2xl text-slate-900 dark:text-white border-none"
+            className="p-2.5 bg-slate-100 rounded-2xl text-slate-900 border-none"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </motion.button>
@@ -78,13 +69,6 @@ export default function Header({ onOpenModal }: { onOpenModal: () => void }) {
           </div>
 
           <div className="flex items-center gap-3">
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              onClick={toggleTheme}
-              className="p-3 bg-slate-100 dark:bg-slate-800 rounded-2xl text-slate-900 dark:text-white border-none hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-            >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </motion.button>
             <motion.button 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

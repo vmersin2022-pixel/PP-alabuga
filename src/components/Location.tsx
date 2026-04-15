@@ -57,7 +57,7 @@ export default function Location() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="https://yandex.ru/map-widget/v1/?ll=52.062164%2C55.761066&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjI2MjYyNhI_0KDQvtGB0YHQuNGPLCDQoNC10YHQv9GD0LHQu9C40LrQsCDQotCw0YLQsNGA0YHRgtCw0L0sINCV0LvQsNCx0YPQsyQsINGD0LsuINCa0LDQt9Cw0L3RgdC60LDRjSwgNDhBIgoNX_4WQhWaWF9C%2C&z=16"
+              href="https://yandex.com/maps/-/CPvfNBKD"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-black shadow-xl shadow-blue-500/20 hover:bg-blue-700 transition-all"
@@ -73,7 +73,7 @@ export default function Location() {
             className="relative aspect-video lg:aspect-square rounded-[48px] overflow-hidden shadow-2xl border-8 border-white dark:border-slate-800"
           >
             <iframe 
-              src="https://yandex.ru/map-widget/v1/?ll=52.062164%2C55.761066&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjI2MjYyNhI_0KDQvtGB0YHQuNGPLCDQoNC10YHQv9GD0LHQu9C40LrQsCDQotCw0YLQsNGA0YHRgtCw0L0sINCV0LvQsNCx0YPQsyQsINGD0LsuINCa0LDQt9Cw0L3RgdC60LDRjSwgNDhBIgoNX_4WQhWaWF9C%2C&z=16" 
+              src="https://yandex.com/map-widget/v1/?ll=52.062164%2C55.761066&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjI2MjYyNhI_0KDQvtGB0YHQuNGPLCDQoNC10YHQv9GD0LHQu9C40LrQsCDQotCw0YLQsNGA0YHRgtCw0L0sINCV0LvQsNCx0YPQsyQsINGD0LsuINCa0LDQt9Cw0L3RgdC60LDRjSwgNDhBIgoNX_4WQhWaWF9C%2C&z=16" 
               width="100%" 
               height="100%" 
               frameBorder="0" 

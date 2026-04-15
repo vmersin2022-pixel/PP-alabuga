@@ -26,27 +26,27 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="py-8 bg-slate-50">
+    <section className="py-8 bg-slate-50 dark:bg-slate-900/50 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-extrabold text-slate-900 text-center mb-16 tracking-tight">Как мы работаем</h2>
+        <h2 className="text-4xl font-extrabold text-slate-900 dark:text-white text-center mb-16 tracking-tight">Как мы работаем</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <div 
               key={index} 
-              className="group bg-white p-8 rounded-[24px] shadow-sm shadow-slate-200/50 border border-slate-100 flex flex-col relative overflow-hidden transition-all duration-500 cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20"
+              className="group bg-white dark:bg-slate-800 p-8 rounded-[24px] shadow-sm shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-white/5 flex flex-col relative overflow-hidden transition-all duration-500 cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20"
             >
               {/* Base Content */}
               <div className="relative z-10 flex flex-col h-full transition-opacity duration-500 group-hover:opacity-0">
                 <div className="flex items-center justify-between mb-6">
-                  <div className="text-blue-600 transition-transform duration-700 group-hover:scale-110 origin-left">
+                  <div className="text-blue-600 dark:text-blue-400 transition-transform duration-700 group-hover:scale-110 origin-left">
                     {step.icon}
                   </div>
-                  <div className="text-4xl font-extrabold text-orange-500/20">
+                  <div className="text-4xl font-extrabold text-orange-500/20 dark:text-orange-500/10">
                     0{index + 1}
                   </div>
                 </div>
-                <h3 className="font-bold text-2xl text-slate-900 mb-4">{step.title}</h3>
-                <p className="text-slate-600 text-lg leading-relaxed flex-grow">{step.desc}</p>
+                <h3 className="font-bold text-2xl text-slate-900 dark:text-white mb-4">{step.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed flex-grow">{step.desc}</p>
               </div>
 
               {/* Cinematic Hover Overlay */}

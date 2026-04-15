@@ -52,8 +52,8 @@ export default function FAQ() {
     <section className="py-8">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-blue-600 font-bold uppercase tracking-wider text-base md:text-lg mb-4">Отвечаем на частые вопросы перед заказом</p>
-          <h2 className="text-4xl font-extrabold text-slate-900 tracking-tight">Часто задаваемые вопросы</h2>
+          <p className="text-blue-600 dark:text-blue-400 font-bold uppercase tracking-wider text-base md:text-lg mb-4">Отвечаем на частые вопросы перед заказом</p>
+          <h2 className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Часто задаваемые вопросы</h2>
         </div>
         <div className="space-y-4">
           {questions.map((item, index) => (
@@ -61,15 +61,15 @@ export default function FAQ() {
               key={index} 
               className={`rounded-3xl border transition-all duration-300 overflow-hidden cursor-pointer backdrop-blur-sm ${
                 openIndex === index 
-                  ? 'bg-gradient-to-br from-slate-200/80 to-slate-100/50 border-slate-300 shadow-lg shadow-slate-900/5' 
-                  : 'bg-gradient-to-br from-slate-100/50 to-slate-50/30 border-slate-200 hover:from-slate-200/60 hover:to-slate-100/40'
+                  ? 'bg-gradient-to-br from-slate-200/80 to-slate-100/50 dark:from-slate-800 dark:to-slate-900/50 border-slate-300 dark:border-white/10 shadow-lg shadow-slate-900/5' 
+                  : 'bg-gradient-to-br from-slate-100/50 to-slate-50/30 dark:from-slate-800/50 dark:to-slate-900/30 border-slate-200 dark:border-white/5 hover:from-slate-200/60 hover:to-slate-100/40 dark:hover:from-slate-800 dark:hover:to-slate-900/50'
               }`}
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
             >
               <button 
                 className="w-full p-6 md:p-8 text-left flex justify-between items-center"
               >
-                <span className={`font-bold text-lg md:text-xl transition-colors duration-300 ${openIndex === index ? 'text-blue-700' : 'text-slate-900'}`}>
+                <span className={`font-bold text-lg md:text-xl transition-colors duration-300 ${openIndex === index ? 'text-blue-700 dark:text-blue-400' : 'text-slate-900 dark:text-white'}`}>
                   {item.q}
                 </span>
                 <motion.div 
@@ -89,12 +89,12 @@ export default function FAQ() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
                     <div className="px-6 md:px-8 pb-6 md:pb-8">
-                      <div className="text-slate-600 leading-relaxed whitespace-pre-line mb-6 text-lg">
+                      <div className="text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-line mb-6 text-lg">
                         {item.a}
                       </div>
-                      <div className="flex items-start gap-3 bg-blue-50/80 p-4 md:p-5 rounded-2xl border border-blue-100/50">
+                      <div className="flex items-start gap-3 bg-blue-50/80 dark:bg-blue-500/10 p-4 md:p-5 rounded-2xl border border-blue-100/50 dark:border-blue-500/20">
                         <span className="text-xl leading-none mt-0.5">👉</span>
-                        <span className="text-blue-900 font-medium leading-snug">{item.highlight}</span>
+                        <span className="text-blue-900 dark:text-blue-100 font-medium leading-snug">{item.highlight}</span>
                       </div>
                     </div>
                   </motion.div>

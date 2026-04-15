@@ -25,13 +25,6 @@ import LogoGuide from './components/LogoGuide';
 import Reviews from './components/Reviews';
 import Location from './components/Location';
 
-const ThemeContext = createContext<{ isDark: boolean; toggleTheme: () => void }>({
-  isDark: false,
-  toggleTheme: () => {},
-});
-
-export const useTheme = () => useContext(ThemeContext);
-
 function AnimatedRoutes({ onOpenModal }: { onOpenModal: () => void }) {
   const location = useLocation();
   
@@ -74,7 +67,7 @@ function HomePage({ onOpenModal }: { onOpenModal: () => void }) {
   };
 
   return (
-    <div className="min-h-screen text-slate-900 dark:text-white font-sans selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900 transition-colors duration-300">
       <BackgroundLayer />
       <Header onOpenModal={onOpenModal} />
       <main>
@@ -97,36 +90,20 @@ function HomePage({ onOpenModal }: { onOpenModal: () => void }) {
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') === 'dark' || 
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    }
-    return false;
-  });
 
   useEffect(() => {
-    const root = window.document.documentElement;
-    if (isDark) {
-      root.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      root.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDark]);
-
-  const toggleTheme = () => setIsDark(!isDark);
+    // Force light mode
+    window.document.documentElement.classList.remove('dark');
+    localStorage.removeItem('theme');
+  }, []);
 
   return (
-    <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-      <Router>
-        <AnimatedRoutes onOpenModal={() => setIsModalOpen(true)} />
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <ContactForm onClose={() => setIsModalOpen(false)} />
-        </Modal>
-        <CookieConsent />
-      </Router>
-    </ThemeContext.Provider>
+    <Router>
+      <AnimatedRoutes onOpenModal={() => setIsModalOpen(true)} />
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <ContactForm onClose={() => setIsModalOpen(false)} />
+      </Modal>
+      <CookieConsent />
+    </Router>
   );
 }

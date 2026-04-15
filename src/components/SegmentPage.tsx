@@ -22,7 +22,7 @@ export default function SegmentPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden dark:bg-slate-950 transition-colors">
+    <div className="min-h-screen flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden bg-white transition-colors duration-300">
       <BackgroundLayer />
       <Header onOpenModal={() => setIsModalOpen(true)} />
       
