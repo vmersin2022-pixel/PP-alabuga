@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { getProxyImageUrl } from '../lib/imageUtils';
 
 const works = [
   { 
@@ -87,8 +88,7 @@ export default function Portfolio({ onOpenModal }: { onOpenModal: () => void }) 
           {works.map((work, index) => (
             <div 
               key={index} 
-              data-active={activeMobileCard === index}
-              className="rounded-3xl overflow-hidden shadow-lg shadow-slate-200/50 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 bg-white relative group cursor-pointer border border-slate-100 flex flex-col data-[active=true]:shadow-2xl data-[active=true]:shadow-blue-500/20 data-[active=true]:-translate-y-1"
+              className={`rounded-3xl overflow-hidden shadow-lg shadow-slate-200/50 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 bg-white relative group cursor-pointer border border-slate-100 flex flex-col ${activeMobileCard === index ? 'is-active shadow-2xl shadow-blue-500/20 -translate-y-1' : ''}`}
               onClick={() => {
                 if (window.matchMedia('(max-width: 768px)').matches) {
                   if (activeMobileCard !== index) {
@@ -101,13 +101,13 @@ export default function Portfolio({ onOpenModal }: { onOpenModal: () => void }) 
             >
               <div className="relative overflow-hidden aspect-[4/5]">
                 <img 
-                  src={work.url || `https://picsum.photos/seed/${work.seed}/600/800`} 
+                  src={getProxyImageUrl(work.url || `https://picsum.photos/seed/${work.seed}/600/800`)} 
                   alt={work.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-data-[active=true]:scale-105"
-                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-[.is-active]:scale-105"
+                  referrerPolicy="origin-when-cross-origin"
                 />
-                <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 group-data-[active=true]:opacity-100 transition-opacity duration-500 flex flex-col justify-center p-8">
-                  <ul className="space-y-3 text-white mb-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-data-[active=true]:translate-y-0 group-data-[active=true]:opacity-100 transition-all duration-500 delay-100">
+                <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-500 flex flex-col justify-center p-8">
+                  <ul className="space-y-3 text-white mb-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-[.is-active]:translate-y-0 group-[.is-active]:opacity-100 transition-all duration-500 delay-100">
                     {work.hoverFeatures.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="text-blue-400 mt-1">—</span>
@@ -115,14 +115,14 @@ export default function Portfolio({ onOpenModal }: { onOpenModal: () => void }) 
                       </li>
                     ))}
                   </ul>
-                  <div className="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-data-[active=true]:translate-y-0 group-data-[active=true]:opacity-100 transition-all duration-500 delay-200">
+                  <div className="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-[.is-active]:translate-y-0 group-[.is-active]:opacity-100 transition-all duration-500 delay-200">
                     <span className="inline-flex items-center gap-2 text-white font-bold bg-blue-600 px-5 py-2.5 rounded-full hover:bg-blue-500 transition-colors">
                       {work.cta} <ArrowRight className="w-4 h-4" />
                     </span>
                   </div>
                 </div>
               </div>
-              <div className="p-6 bg-white relative z-10 flex-grow flex flex-col justify-center transition-opacity duration-500 group-hover:opacity-0 group-data-[active=true]:opacity-0">
+              <div className="p-6 bg-white relative z-10 flex-grow flex flex-col justify-center transition-opacity duration-500 group-hover:opacity-0 group-[.is-active]:opacity-0">
                 <p className="font-bold text-xl text-slate-900 mb-2">{work.title}</p>
                 <p className="text-sm text-slate-600 leading-relaxed">{work.stats}</p>
               </div>

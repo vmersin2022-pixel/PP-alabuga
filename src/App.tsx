@@ -24,8 +24,10 @@ import FinalCTA from './components/FinalCTA';
 import BackgroundLayer from './components/BackgroundLayer';
 
 function HomePage({ onOpenModal }: { onOpenModal: () => void }) {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   const sectionVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: isMobile ? 1 : 0, y: isMobile ? 0 : 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
 
@@ -35,12 +37,12 @@ function HomePage({ onOpenModal }: { onOpenModal: () => void }) {
       <Header onOpenModal={onOpenModal} />
       <main>
         <Hero onOpenModal={onOpenModal} />
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><SolutionsHub /></motion.div>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><Services onOpenModal={onOpenModal} /></motion.div>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><Portfolio onOpenModal={onOpenModal} /></motion.div>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><TrustSection /></motion.div>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><HowItWorks /></motion.div>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={sectionVariants}><FAQ /></motion.div>
+        <motion.div initial={isMobile ? "visible" : "hidden"} whileInView="visible" viewport={{ once: true, amount: 0.01 }} variants={sectionVariants}><SolutionsHub /></motion.div>
+        <motion.div initial={isMobile ? "visible" : "hidden"} whileInView="visible" viewport={{ once: true, amount: 0.01 }} variants={sectionVariants}><Services onOpenModal={onOpenModal} /></motion.div>
+        <motion.div initial={isMobile ? "visible" : "hidden"} whileInView="visible" viewport={{ once: true, amount: 0.01 }} variants={sectionVariants}><Portfolio onOpenModal={onOpenModal} /></motion.div>
+        <motion.div initial={isMobile ? "visible" : "hidden"} whileInView="visible" viewport={{ once: true, amount: 0.01 }} variants={sectionVariants}><TrustSection /></motion.div>
+        <motion.div initial={isMobile ? "visible" : "hidden"} whileInView="visible" viewport={{ once: true, amount: 0.01 }} variants={sectionVariants}><HowItWorks /></motion.div>
+        <motion.div initial={isMobile ? "visible" : "hidden"} whileInView="visible" viewport={{ once: true, amount: 0.01 }} variants={sectionVariants}><FAQ /></motion.div>
       </main>
       <Footer />
       <StickyMobileMenu onOpenModal={onOpenModal} />

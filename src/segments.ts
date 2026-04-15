@@ -106,7 +106,7 @@ export const segments: Record<string, SegmentPassport> = {
       title: 'Брендированная форма для автосервисов',
       description: 'Износостойкая одежда для механиков с логотипом.',
       h1: 'Брендированная форма для автосервисов',
-      ogImage: 'https://picsum.photos/seed/autoservice/1200/630',
+      ogImage: 'https://i.postimg.cc/MHHMTj40/Chat-GPT-Image-11-apr-2026-g-00-53-51-(1).png',
     },
     hero: {
       title: 'Нанесем логотип на форму для автосервиса, который не выцветает и держится в работе',
@@ -115,7 +115,7 @@ export const segments: Record<string, SegmentPassport> = {
       ctaSecondary: 'Смотреть примеры',
       benefits: ['Не выцветает', 'Держится в работе', 'Быстрая печать'],
       microProof: 'Поможем с формой при необходимости',
-      image: 'https://picsum.photos/seed/autoservice/1920/1080',
+      image: 'https://i.postimg.cc/MHHMTj40/Chat-GPT-Image-11-apr-2026-g-00-53-51-(1).png',
     },
     forWhom: ['Автосервисы', 'СТО', 'Шиномонтаж', 'Автомойки', 'Детейлинг'],
     painPoints: {
@@ -136,9 +136,9 @@ export const segments: Record<string, SegmentPassport> = {
     ],
     evidence: {
       cases: [
-        { type: 'real', title: 'Комплект для СТО на 12 человек', description: 'Полный комплект формы, сделали за 7 дней', image: 'https://picsum.photos/seed/case1/400/300' },
-        { type: 'real', title: 'Форма для автомойки', description: 'Влагостойкие фартуки, сделали за 5 дней', image: 'https://picsum.photos/seed/case2/400/300' },
-        { type: 'real', title: 'Футболки с логотипом для шиномонтажа', description: 'Износостойкий принт, сделали за 3 дня', image: 'https://picsum.photos/seed/case3/400/300' },
+        { type: 'real', title: 'Комплект для СТО на 12 человек', description: 'Полный комплект формы, сделали за 7 дней', image: 'https://i.postimg.cc/9fZ40pdP/Chat-GPT-Image-14-apr-2026-g-23-57-48.png' },
+        { type: 'real', title: 'Форма для автомойки', description: 'Влагостойкие фартуки, сделали за 5 дней', image: 'https://i.postimg.cc/7YSQ1CgW/Chat-GPT-Image-15-apr-2026-g-00-23-51.png' },
+        { type: 'real', title: 'Футболки с логотипом для шиномонтажа', description: 'Износостойкий принт, сделали за 3 дня', image: 'https://i.postimg.cc/VsnFpxdS/Chat-GPT-Image-15-apr-2026-g-00-26-49.png' },
       ],
     },
     howItWorks: [
@@ -187,10 +187,10 @@ export const segments: Record<string, SegmentPassport> = {
       sourceDefault: 'website',
     },
     assets: {
-      heroImage: 'https://picsum.photos/seed/autoservice/1920/1080',
-      ogImage: 'https://picsum.photos/seed/autoservice/1200/630',
+      heroImage: 'https://i.postimg.cc/MHHMTj40/Chat-GPT-Image-11-apr-2026-g-00-53-51-(1).png',
+      ogImage: 'https://i.postimg.cc/MHHMTj40/Chat-GPT-Image-11-apr-2026-g-00-53-51-(1).png',
       hubCard: {
-        icon: 'https://i.postimg.cc/H8GsvjTj/Chat-GPT-Image-11-apr-2026-g-00-53-51-(1).png',
+        icon: 'https://i.postimg.cc/MHHMTj40/Chat-GPT-Image-11-apr-2026-g-00-53-51-(1).png',
         title: 'Автосервисы',
         description: 'Логотипы, которые не стираются и выдерживают работу',
         descriptionHover: 'Печатаем на форме для механиков и СТО — выдерживает грязь, масло и частые стирки',
@@ -236,7 +236,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Собираем комплекты под команду', description: 'Размеры и количество', type: 'benefit' },
     ],
     bundles: [{ title: 'Комплект бариста', description: 'Фартук + футболка', items: ['Фартук', 'Футболка'] }],
-    evidence: { cases: [{ type: 'real', title: 'Кофейня "Зерно"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case2/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'Кофейня "Зерно"', description: 'Полный комплект формы', image: 'https://i.postimg.cc/bwDrFhwB/Chat-GPT-Image-15-apr-2026-g-00-32-31.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем стиль и количество сотрудников' },
@@ -322,7 +322,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Настраиваем систему дозаказа', description: 'Удобство закупок', type: 'process' },
     ],
     bundles: [{ title: 'Комплект рабочего', description: 'Куртка + брюки', items: ['Куртка', 'Брюки'] }],
-    evidence: { cases: [{ type: 'real', title: 'Завод "Металл"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case3/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'Завод "Металл"', description: 'Полный комплект формы', image: 'https://i.postimg.cc/nrmZGHkG/Chat-GPT-Image-15-apr-2026-g-00-40-15.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем тираж и условия' },

@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageCircle, Zap } from 'lucide-react';
+import { getProxyImageUrl } from '../lib/imageUtils';
 
 export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
   return (
@@ -54,10 +55,10 @@ export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
         <div className="relative">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50">
             <img 
-              src="https://i.postimg.cc/mDX38RWq/Odezda-brendirovannaa-logotipom-Print-Project.png" 
+              src={getProxyImageUrl("https://i.postimg.cc/mDX38RWq/Odezda-brendirovannaa-logotipom-Print-Project.png")} 
               alt="Сотрудник в брендированной форме" 
               className="w-full h-auto"
-              referrerPolicy="no-referrer"
+              referrerPolicy="origin-when-cross-origin"
             />
             {/* Photo Enhancements: Gradient & Blur */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>

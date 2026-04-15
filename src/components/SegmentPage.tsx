@@ -8,6 +8,7 @@ import BackgroundLayer from './BackgroundLayer';
 import Modal from './Modal';
 import StickyMobileMenu from './StickyMobileMenu';
 import { ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react';
+import { getProxyImageUrl } from '../lib/imageUtils';
 
 export default function SegmentPage() {
   const { segment } = useParams<{ segment: string }>();
@@ -137,7 +138,12 @@ export default function SegmentPage() {
                 {config.evidence.cases.map((c) => (
                   <div key={c.title} className="group bg-white p-4 rounded-[32px] shadow-lg shadow-slate-200/50 border border-slate-100 hover:shadow-2xl transition-all duration-500">
                     <div className="relative overflow-hidden rounded-2xl mb-6 aspect-[4/3]">
-                      <img src={c.image} alt={c.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                      <img 
+                        src={getProxyImageUrl(c.image)} 
+                        alt={c.title} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                        referrerPolicy="origin-when-cross-origin"
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                     </div>
                     <div className="px-4 pb-4">
