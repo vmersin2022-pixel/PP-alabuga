@@ -408,7 +408,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Поддерживаем единый стиль команды', description: 'Стабильность стиля', type: 'benefit' },
     ],
     bundles: [{ title: 'Комплект мастера', description: 'Футболка + фартук', items: ['Футболка', 'Фартук'] }],
-    evidence: { cases: [{ type: 'real', title: 'Салон "Beauty"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case4/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'Салон "Beauty"', description: 'Полный комплект формы', image: 'https://mtvpselwqpxbptipwjqe.supabase.co/storage/v1/object/public/images/beauty.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем стиль и количество сотрудников' },
@@ -498,7 +498,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Упрощаем дозаказ', description: 'Система закупок', type: 'process' },
     ],
     bundles: [{ title: 'Комплект продавца', description: 'Футболка + фартук', items: ['Футболка', 'Фартук'] }],
-    evidence: { cases: [{ type: 'real', title: 'Магазин "Стиль"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case5/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'Магазин "Стиль"', description: 'Полный комплект формы', image: 'https://mtvpselwqpxbptipwjqe.supabase.co/storage/v1/object/public/images/stil.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем формат и количество сотрудников' },
@@ -583,7 +583,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Единый стиль', description: 'Поддержка бренда', type: 'benefit' },
     ],
     bundles: [{ title: 'Комплект тренера', description: 'Футболка + шорты', items: ['Футболка', 'Шорты'] }],
-    evidence: { cases: [{ type: 'real', title: 'Клуб "Спорт"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case6/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'Клуб "Спорт"', description: 'Полный комплект формы', image: 'https://mtvpselwqpxbptipwjqe.supabase.co/storage/v1/object/public/images/sport.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем стиль и количество тренеров' },
@@ -669,7 +669,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Дозаказы', description: 'Система закупок', type: 'process' },
     ],
     bundles: [{ title: 'Комплект клинера', description: 'Футболка + фартук', items: ['Футболка', 'Фартук'] }],
-    evidence: { cases: [{ type: 'real', title: 'Клининг "Чисто"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case7/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'Клининг "Чисто"', description: 'Полный комплект формы', image: 'https://mtvpselwqpxbptipwjqe.supabase.co/storage/v1/object/public/images/klining.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем количество сотрудников' },
@@ -753,7 +753,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Брендирование', description: 'Нанесем логотип', type: 'process' },
     ],
     bundles: [{ title: 'Комплект курьера', description: 'Футболка + куртка', items: ['Футболка', 'Куртка'] }],
-    evidence: { cases: [{ type: 'real', title: 'Доставка "Быстро"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case8/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'Доставка "Быстро"', description: 'Полный комплект формы', image: 'https://mtvpselwqpxbptipwjqe.supabase.co/storage/v1/object/public/images/dostavka.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем количество курьеров' },
@@ -837,7 +837,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Брендирование', description: 'Нанесем логотип', type: 'process' },
     ],
     bundles: [{ title: 'Комплект строителя', description: 'Куртка + брюки', items: ['Куртка', 'Брюки'] }],
-    evidence: { cases: [{ type: 'real', title: 'Строительство "Дом"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case9/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'Строительство "Дом"', description: 'Полный комплект формы', image: 'https://mtvpselwqpxbptipwjqe.supabase.co/storage/v1/object/public/images/bani.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем количество сотрудников' },
@@ -921,7 +921,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Брендирование', description: 'Нанесем логотип', type: 'process' },
     ],
     bundles: [{ title: 'Комплект врача', description: 'Халат + костюм', items: ['Халат', 'Костюм'] }],
-    evidence: { cases: [{ type: 'real', title: 'Клиника "Здоровье"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case10/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'Мерч для бренда', description: 'Полный комплект брендированной одежды', image: 'https://mtvpselwqpxbptipwjqe.supabase.co/storage/v1/object/public/images/brend.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем количество сотрудников' },
@@ -1005,7 +1005,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Брендирование', description: 'Нанесем логотип', type: 'process' },
     ],
     bundles: [{ title: 'Комплект ветеринара', description: 'Халат + костюм', items: ['Халат', 'Костюм'] }],
-    evidence: { cases: [{ type: 'real', title: 'Клиника "Зверье"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case11/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'Корпоративный мерч', description: 'Полный комплект формы', image: 'https://mtvpselwqpxbptipwjqe.supabase.co/storage/v1/object/public/images/enduro.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем количество сотрудников' },
@@ -1089,7 +1089,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Брендирование', description: 'Нанесем логотип', type: 'process' },
     ],
     bundles: [{ title: 'Комплект охранника', description: 'Куртка + брюки', items: ['Куртка', 'Брюки'] }],
-    evidence: { cases: [{ type: 'real', title: 'ЧОП "Щит"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case12/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'ЧОП "Щит"', description: 'Полный комплект формы', image: 'https://mtvpselwqpxbptipwjqe.supabase.co/storage/v1/object/public/images/chop.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем количество сотрудников' },
@@ -1173,7 +1173,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Брендирование', description: 'Нанесем логотип', type: 'process' },
     ],
     bundles: [{ title: 'Комплект сотрудника', description: 'Футболка + худи', items: ['Футболка', 'Худи'] }],
-    evidence: { cases: [{ type: 'real', title: 'Школа "Знание"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case13/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'Школа "Уникум"', description: 'Полный комплект формы', image: 'https://mtvpselwqpxbptipwjqe.supabase.co/storage/v1/object/public/images/unikum.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем количество сотрудников' },
@@ -1257,7 +1257,7 @@ export const segments: Record<string, SegmentPassport> = {
       { title: 'Брендирование', description: 'Нанесем логотип', type: 'process' },
     ],
     bundles: [{ title: 'Комплект промоутера', description: 'Футболка + кепка', items: ['Футболка', 'Кепка'] }],
-    evidence: { cases: [{ type: 'real', title: 'Ивент "Праздник"', description: 'Полный комплект формы', image: 'https://picsum.photos/seed/case14/400/300' }] },
+    evidence: { cases: [{ type: 'real', title: 'Ивент "Праздник"', description: 'Полный комплект формы', image: 'https://mtvpselwqpxbptipwjqe.supabase.co/storage/v1/object/public/images/prazdnik.png' }] },
     howItWorks: [
       { title: 'Оставляете заявку', description: 'Заполните форму, и мы свяжемся с вами' },
       { title: 'Уточняем задачу', description: 'Обсуждаем количество сотрудников' },
